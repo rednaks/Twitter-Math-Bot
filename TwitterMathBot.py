@@ -57,4 +57,4 @@ for s in search:
      status = api.PostUpdate("@"+s.user.screen_name+" "+utext+"="+str(eval(utext)))  # Sending the anwser if succeed.
   except: 
      putErrLog(s.text)
-     status = api.PostUpdate("@"+s.user.screen_name+" Hmm I don't that you are doing maths !")            # Send this if not, 
+     status = api.PostUpdate("@"+s.user.screen_name+" Hmm I don't think that you are doing maths !")            # Send this if not, 
