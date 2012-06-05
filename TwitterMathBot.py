@@ -43,11 +43,11 @@ api = twitter.Api(consumer_key=consumer_k,consumer_secret=consumer_s,access_toke
 last_id = getLastId()
 
 search = api.GetSearch(term='#redCalc',since_id=last_id) # Looking for all the tweets containing #redcalc hashtag since the last Id
-i=0
+i=False
 for s in search:
-  if i==0:
+  if not i:
     putLastId(s.id)
-    i+=1
+    i=True
 # Calculating ...
   utext = re.sub(str(s.user.screen_name),'',s.text)    
   utext = re.sub(r'[ :@%#a-zA-Z]','',utext)
